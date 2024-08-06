@@ -8,7 +8,7 @@
 
 In this lab we're gong to **Investigate and Work the Incidents** being generated within **Microsoft Sentinel**.
 
-We'll do this in accordance with the [NIST 800-61](https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-61r2.pdf) **Incident Management Lifecycle**.
+We'll do this in accordance with the [**NIST 800-61**](https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-61r2.pdf) **Incident Management Lifecycle**.
 
 <br>
 
@@ -17,19 +17,26 @@ We'll do this in accordance with the [NIST 800-61](https://nvlpubs.nist.gov/nist
 <br />
 <br />
 
-## Step 1: Preparation
+
+<details close> 
+<summary> <h2>4 Step Incident Response Guidance / Guidelines</h2> </summary>
+<br>
+
+## Step ➀ ➜ Preparation
 
 We've completed this step already by:
 
-- Setting Up Logging for all of our Resources
+- Setting Up **Logging** for all of our Resources.
 
-- Ingesting all of the Logs into the Log Analytics Workspace
+- **Ingesting all of the Logs** into the **Log Analytics Workspace**.
 
-- Configuring Microsoft Sentinel & Alert Rules.
+- Configuring **Microsoft Sentinel** & **Alert Rules**.
 
 <br>
 
-## Step 2: Detection & Analysis
+<br>
+
+## Step ➁ ➜ Detection & Analysis
 
 <br>
 
@@ -45,81 +52,100 @@ We've completed this step already by:
 
 <br>
 
-1. Set Severity, Status, Owner
+**1️⃣** Set the **Severity**, the **Status** & the **Owner** of the Incident.
 
-2. View Full Details
+**2️⃣** **View Full Details**
 
-3. Observe the Activity Log
+**3️⃣** Observe the **Activity Log** (for the History of the Incident)
 
-4. Observe Entities and Incident Timelines
+**4️⃣** Observe the **Entities** & **Incident Timeline**
 
-5. “Investigate” the incident and continue trying to determine the scope
+**5️⃣** **Investigate** the Incident and continue trying to Determine the Scope
 
-6. Inspect the entities and see if there are any related events
+**6️⃣** **Inspect the Entities** and see if there are any Related Events
 
-7. Determine legitimacy of the incident
+**7️⃣** **Determine Legitimacy** of the Incident
 
-8. If True Positive, continue, if False positive, close it out
-
-<br>
-
-## Step 3: Containment, Eradication, and Recovery
-
-Use this simple Incident Response PlayBook to remediate the incident.
-
-<br>
-
-## Step 4: Post-Incident Activity
-
-Document Findings and Close out the Incident in Sentinel
+**8️⃣** If **True Positive** ➜ Continue | If **False Positive** ➜ Close it out
 
 <br>
 
 <br>
 
+## Step ➂ ➜ Containment, Eradication & Recovery
 
+Use this simple [**Incident Response PlayBook**](https://docs.google.com/document/d/1EQ5MzN95POLaRIMulYg3PIH3UGHtDNcGdkFvgOXyEXQ/edit#heading=h.uyxi3urvol4g) to **Remediate the Incident**.
 
+<br>
 
+<br>
 
+## Step ➃ ➜ Post-Incident Activity
 
+- Document Findings
 
+- Close out the Incident in Sentinel
 
+<br>
 
+  </details>
 
-
-
-
-
-
-
-
-
-
+<h2></h2>
 
 <details close> 
-<summary> <h2>1️⃣ World Attack Maps Construction</h2> </summary>
+<summary> <h2>Incident ❶ - Brute Force SUCCESS - Windows</h2> </summary>
 <br>
 
-> The first thing we're going to do is **Build 4 Attack Maps for the Following Use Cases**:
->
+> This Incident gets triggered when Sentinel detects a Successful Login after Multiple Failed Attempts.
 > 
-> 1. Failed Authentication against **Windows WMs** (RDP / SMB / General Authentication Failures)
-> 
-> 2. Failed Authentication against **Linux VM** (SSH)
-> 
-> 3. Failed Authentication to the **Microsoft SQL Server** (inside our Windows VM)
-> 
-> 4. Malicious Inbound Flows for the **Network Security Groups**
->
-
+> It indicates that a Brute Force Attack was Successfully Conducted.
 
 <br>
 
+## Incident Description
+
 <br>
 
-Go to **Microsoft Sentinel** ➜ select our Log Analytics Workspace ```LAW-Cyber-Lab``` that is associated with this Sentinel Instance.
+➡️ This Incident involves observation of potential **Brute Force Attempts against a Windows VM**.
 
-Click on the **Workbooks** blade ➜ and then ➕ **Add Workbook**
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
+
+<br>
+
+## Initial Response Actions
+
+<br>
+
+✔ Verify the Authenticity of the Alert or Report.
+
+✔ Immediately Isolate the Machine and Change the Password of the affected User.
+
+✔ Identify the Origin of the Attacks and determine if they are attacking or involved with anything else.
+
+✔ Determine How and When the attack occurred.
+
+✔ Are the NSGs not being locked down? If so ➜ check other NSGs.
+
+✔ Assess the Potential Impact of the Incident.
+
+✔ What Type of Account was it? What Permissions did it have?
+
+<br>
+
+<br>
+
+## Detection & Analysis
+
+<details close> 
+<summary> <h3>🎯 Step-by-Step</h3> </summary>
+
+<br>
+  
+**1️⃣** Set the **Severity**, the **Status** & the **Owner** of the Incident:
 
 <br>
 
@@ -131,143 +157,89 @@ Click on the **Workbooks** blade ➜ and then ➕ **Add Workbook**
 
 <br>
 
-<details close> 
-  
-**<summary> 📝 Step-by-step Guide on How to Create the Sentinel Maps Inside the Workbooks?</summary>**
+**2️⃣** **View Full Details**
 
 <br>
 
-We'll first create the **Workbook** & the **Map** for the ***Linux SSH Authentication Failures***
-
-After clicking on ➕ **Add Workbook** ➜ you can see there's a Default Workbook that Sentinel made.
-
-Click ✏️ **Edit**
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
 
 <br>
-
-![azure portal](https://github.com/user-attachments/assets/9d44e9cd-77b8-41f4-93a7-2067a752e545)
-
-<br>
-
-There's 2 Elements in the default workbook ➜ so we'll 🗑️ **Remove** them both
-
-<br>
-
-![azure portal](https://github.com/user-attachments/assets/343aafd9-44d7-4b59-bcda-b031db117d2b)
-
-<br>
-
-![azure portal](https://github.com/user-attachments/assets/202e60b2-e41e-4278-a423-c2b64b411707)
-
-<br>
-
-Then we're going to click on ➕ **Add** ➜ and we're going to 𝄜 **Add query** based element
-
-<br>
-
-![azure portal](https://github.com/user-attachments/assets/4ab29302-b055-44cb-ba8e-7cb881f5b0c7)
-
-<br>
-
-We'll then click the **</> Advanced Editor blade**
-
-<br>
-
-![azure portal](https://github.com/user-attachments/assets/d413801a-f244-417b-b0e1-98123d4fc183)
-
-<br>
-
-Now go to [this GitHub link](https://github.com/joshmadakor1/Cyber-Course-v2/blob/main/Sentinel-Maps(JSON)/linux-ssh-auth-fail.json) to get the **JSON** for the **Linux SSH Failed Authentication Map**.
-
-Copy the **JSON** text.
-
-<br>
-
-![azure portal](https://github.com/user-attachments/assets/f3af9386-d113-4c36-ac3f-02f2729f170a)
-
-<br>
-
-Back in the Azure Portal ➜ erase the default text ➜ and paste the **JSON** from the GitHub link
-
-Then click ✔️ **Done Editing** down bellow
-
-<br>
-
-![azure portal](https://github.com/user-attachments/assets/17ab1229-7a1b-46d8-bc07-a5eb7fa9069e)
-
-<br>
-
-Lastly, we'll click on the 💾 **Save** button:
-
-- **Name the Workbook** ➜ ```linux-ssh-auth-fail```
-
-- Make sure you select our **Log Analytics Workspace** ➜ ```LAW-Cyber-Lab```
-
-- Place the Workbook at he same **Location** as our other Resources ➜ ```(US) East US```
-
-Click **"Apply"**
-
-<br>
-
-![azure portal](https://github.com/user-attachments/assets/da6e470e-b63b-401d-8b97-c9d2883ad25a)
-
-<br>
-
-✅ The **Workbook** and the corresponding **Sentinel Map** for the **Linux SSH Authentication Failures** were successfuully created.
-
-<br>
-
-![azure portal](https://github.com/user-attachments/assets/63f4d693-f9a9-44b1-99cd-70b408a5b8a1)
-
-<br>
-
-We'll then continue creating the rest of the Workbooks & Maps for the rest of the Resources.
-
-We'll click on ➕ **Add Workbook** ➜ follow the same process ➜  and use the other JSON codes from [this GitHub link](https://github.com/joshmadakor1/Cyber-Course-v2/tree/main/Sentinel-Maps(JSON))
-
-<br>
-
-  </details>
 
 <h2></h2>
 
 <br>
 
-✅ All 4 Workbooks and Maps were successfully created:
+**3️⃣** Observe the **Activity Log**
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/425a8c12-e647-40d9-aa56-4fa965ea75da)
+**```Nothing to show here.```**
 
 <br>
 
-<details close> 
-  
-**<summary> 💡 We can then Test the Query ➜ to see if Events will be plotted on the Maps.</summary>**
+<h2></h2>
 
 <br>
 
-From inside the **Workbook** ➜ click on ✏️ **Edit** ➜ and then **↑ Edit**
+**4️⃣** Observe the **Entities** & **Incident Timeline**
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/d115a623-3ec5-4584-993f-ec5ea9f48bf4)
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/d5b9d372-f6b4-49f2-8674-12adb50aa0a2)
+<h2></h2>
 
 <br>
 
-Copy the **"Log Analytics Worspace Logs Query"** from under the ⚙️ **Settings"** blade
+**5️⃣** **Investigate** the Incident and continue trying to Determine the Scope
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/0c976a36-0991-4679-aea1-22588d9b24f6)
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
 
 <br>
 
-We'll then go to our Log Analytics Workspace ```LAW-Cyber-Lab``` ➜ and **Paste It** to **Query the Logs**
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
+
+<h2></h2>
+
+<br>
+
+**6️⃣** **Inspect the Entities** and see if there are any Related Events
+
+<br>
+
+### The entity is involved with other Brute Force Attempts during the same period.
+
+<br>
+
+<h2></h2>
+
+<br>
+
+**7️⃣** **Determine Legitimacy** of the Incident
+
+<br>
+
+### Determined to be ➜ a **Legitimate Incident** ✅
+
+<br>
+
+<h2></h2>
+
+<br>
+
+**8️⃣** If **True Positive** ➜ Continue | If **False Positive** ➜ Close it out
+
+<br>
+
+### Determined to be ➜ a True Positive ✅
+
+From the **Investigation** ➜ you can see that the **Attacker / Entity** ```63.143.47.155``` is also involved in **4 other Brute Force Attempt Instances**.
 
 <br>
 
@@ -275,17 +247,57 @@ We'll then go to our Log Analytics Workspace ```LAW-Cyber-Lab``` ➜ and **Paste
 
 <br>
 
-For example ➜ this is the Query from the **Microsoft SQL Server Failed Authentication** Workbook in LAW:
+<br>
+
+## Containment, Eradication & Recovery
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/25d8d89c-1a6c-4158-8400-35c46995a395)
+<details close> 
+  
+**<summary> 💡 Note</summary>**
 
 <br>
 
-By doing this, you can test changes to the Query.
+I will address this later ➜ in the **Environment Hardening Section**.
 
-✅ This way we make sure it's **Working and Generating Desired Results** ➜ before having to Update the Sentinel Workbooks.
+Despite that ➜ I'm including the steps here for reference from the **Incident Response Playbook**.
+
+<br>
+
+  </details>
+
+<br>
+
+✔ **Lock down the NSG** assigned to that VM ➜ either **Entirely** or to **Only Allow Necessary Traffic**.
+
+✔ **Reset** the affected **User’s Password**.
+
+✔ **Enable MFA**
+
+<br>
+
+<br>
+
+## Post-Incident Activity
+
+<br>
+
+➡️ Document Findings and Close out the Incident in Sentinel.
+
+<br>
+
+<details close> 
+  
+**<summary> 💡 Note</summary>**
+
+<br>
+
+Check out the **Lessons Learned Section** for more details on this Incident.
+
+<br>
+
+  </details>
 
 <br>
 
@@ -294,7 +306,7 @@ By doing this, you can test changes to the Query.
 <h2></h2>
 
 <details close> 
-<summary> <h2>2️⃣ Alert Creation</h2> </summary>
+<summary> <h2>Incident ❷ - Possible Privilege Escalation - Azure Key Vault</h2> </summary>
 <br>
 
 > We're now going to **Create our Microsoft Sentinel Analytics Query Rules**.
@@ -342,7 +354,7 @@ Back in **Microsoft Sentinel** ➜ click on **Import** to upload the **JSON File
 <h2></h2>
 
 <details close> 
-<summary> <h2>3️⃣ Attack Traffic Generation (Simulated Attacks)</h2> </summary>
+<summary> <h2>Incident ❸ - Brute Force SUCCESS - Microsoft Entra ID</h2> </summary>
 <br>
 
 <br>
@@ -464,7 +476,7 @@ After each attach, wait 10-20 minutes ➜ then check Sentinel to see if you have
 <h2></h2>
 
 <details close> 
-<summary> <h2>4️⃣ Run Insecure Environment for 24 Hours</h2> </summary>
+<summary> <h2>Incident ❹ - Brute Force ATTEMPT - Linux Syslog</h2> </summary>
 <br>
 
 The following table shows the measurements taken from the insecure environment after the initial 24 hour observation period:
