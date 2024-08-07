@@ -96,9 +96,15 @@ Use this simple [**Incident Response PlayBook**](https://docs.google.com/documen
 <summary> <h2>Incident ❶ - Brute Force SUCCESS - Windows</h2> </summary>
 <br>
 
+> <details close> 
+>   
+> **<summary> 💡 </summary>**
+> 
 > This Incident gets triggered when Sentinel detects a Successful Login after Multiple Failed Attempts.
 > 
 > It indicates that a Brute Force Attack was Successfully Conducted.
+> 
+>   </details>
 
 <br>
 
@@ -315,9 +321,15 @@ Check out the **Lessons Learned Section** for more details on this Incident.
 <summary> <h2>Incident ❷ - Possible Privilege Escalation - Azure Key Vault</h2> </summary>
 <br>
 
+> <details close> 
+>   
+> **<summary> 💡 </summary>**
+> 
 > This Incident gets triggered when Sentinel detects Unusual or Unauthorized Access to Critical Credentials in Azure Key Vault.
 > 
 > For example ➜ when someones unauthorized reads an important Password from our Entreprise Password Manager ➜ Azure Key Vault.
+> 
+>   </details>
 
 <br>
 
@@ -492,10 +504,15 @@ I don't think there is anything wrong with the Rule Logic here ➜ just happened
 <summary> <h2>Incident ❸ - Brute Force SUCCESS - Microsoft Entra ID</h2> </summary>
 <br>
 
-
+> <details close> 
+>   
+> **<summary> 💡 </summary>**
+> 
 > The Incident gets triggered when Sentinel detects a Successful Login to a Microsoft Entra ID Account following numerous Failed Login Attempts.
 > 
 > For example ➜ an Attacker Successfully Accessed a Microsoft Entra ID Account by repeatedly Guessing Passwords.
+> 
+>   </details>
 
 <br>
 
@@ -538,42 +555,6 @@ I don't think there is anything wrong with the Rule Logic here ➜ just happened
 
 <br>
   
-**1️⃣** Set the **Severity**, the **Status** & the **Owner** of the Incident:
-
-<br>
-
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
-
-<br>
-
-<h2></h2>
-
-<br>
-
-**2️⃣** **View Full Details**
-
-<br>
-
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
-
-<br>
-
-<h2></h2>
-
-<br>
-
-**3️⃣** Observe the **Activity Log**
-
-<br>
-
-**```Nothing to show here.```**
-
-<br>
-
-<h2></h2>
-
-<br>
-
 **4️⃣** Observe the **Entities** & **Incident Timeline**
 
 <br>
@@ -594,42 +575,6 @@ I don't think there is anything wrong with the Rule Logic here ➜ just happened
 
 <br>
 
-<h2></h2>
-
-<br>
-
-**6️⃣** **Inspect the Entities** and see if there are any Related Events
-
-<br>
-
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
-
-<br>
-
-<h2></h2>
-
-<br>
-
-**7️⃣** **Determine Legitimacy** of the Incident
-
-<br>
-
-Determined **NOT** to be a **Legitimate Incident** ❌
-
-<br>
-
-<h2></h2>
-
-<br>
-
-**8️⃣** If **True Positive** ➜ Continue | If **False Positive** ➜ Close it out
-
-<br>
-
-Determined to be ➜ a **False Positive** ❌
-
-<br>
-
   </details>
 
 <br>
@@ -640,11 +585,11 @@ Determined to be ➜ a **False Positive** ❌
 
 <br>
 
-➡️ None.
+✔ **Reset** the affected **User’s Password & Roles** if applicable.
 
-This was me viewing Key Vault Secrets at work ➜ I'm authorized to do this.
+✔ **Enable MFA**.
 
-I don't think there is anything wrong with the Rule Logic here ➜ just happened to be a legitimate and authorized Incident-Generating Event.
+✔ Consider preventing any logins from outside the US with **Conditional Access***.
 
 <br>
 
@@ -655,6 +600,28 @@ I don't think there is anything wrong with the Rule Logic here ➜ just happened
 <br>
 
 ✅ Document Findings and Close out the Incident in Sentinel.
+
+<br>
+
+<details close> 
+  
+**<summary> 📝 Documentation</summary>**
+
+This is another **False Positive**.
+
+It could have been Multiple Login Attempts with the Incorrect Password or MFA Code.
+
+I recognize this IP from work ➜ although I'm not entirely sure how 35 events were produced.
+
+Perhaps by restoring multiple browser tabs simultaneously?
+  
+  - MFA is already Enabled on the User's Account.
+ 
+  - and the Logins occurred from an Expected IP.
+
+<br>
+
+  </details>
 
 <br>
 
@@ -671,6 +638,20 @@ I don't think there is anything wrong with the Rule Logic here ➜ just happened
 <details close> 
 <summary> <h2>Incident ❹ - Brute Force ATTEMPT - Linux Syslog</h2> </summary>
 <br>
+
+> <details close> 
+>   
+> **<summary> 💡 </summary>**
+> 
+> This Incident gets triggered when Sentinel detects Unusual or Unauthorized Access to Critical Credentials in Azure Key Vault.
+> 
+> For example ➜ when someones unauthorized reads an important Password from our Entreprise Password Manager ➜ Azure Key Vault.
+> 
+>   </details>
+
+
+
+
 
 The following table shows the measurements taken from the insecure environment after the initial 24 hour observation period:
 
