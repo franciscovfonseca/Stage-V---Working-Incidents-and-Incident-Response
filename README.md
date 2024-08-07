@@ -19,7 +19,7 @@ We'll do this in accordance with the [**NIST 800-61**](https://nvlpubs.nist.gov/
 
 
 <details close> 
-<summary> <h2>4 Step Incident Response Guidance / Guidelines</h2> </summary>
+<summary> <h2>▶️ 4 Step Incident Response Guidance / Guidelines</h2> </summary>
 <br>
 
 ## Step ➀ ➜ Preparation
@@ -225,7 +225,7 @@ Use this simple [**Incident Response PlayBook**](https://docs.google.com/documen
 
 <br>
 
-### Determined to be ➜ a **Legitimate Incident** ✅
+Determined to be ➜ a **Legitimate Incident** ✅
 
 <br>
 
@@ -237,7 +237,7 @@ Use this simple [**Incident Response PlayBook**](https://docs.google.com/documen
 
 <br>
 
-### Determined to be ➜ a True Positive ✅
+Determined to be ➜ a **True Positive** ✅
 
 From the **Investigation** ➜ you can see that the **Attacker / Entity** ```63.143.47.155``` is also involved in **4 other Brute Force Attempt Instances**.
 
@@ -283,7 +283,7 @@ Despite that ➜ I'm including the steps here for reference from the **Incident 
 
 <br>
 
-➡️ Document Findings and Close out the Incident in Sentinel.
+✅ Document Findings and Close out the Incident in Sentinel.
 
 <br>
 
@@ -309,43 +309,172 @@ Check out the **Lessons Learned Section** for more details on this Incident.
 <summary> <h2>Incident ❷ - Possible Privilege Escalation - Azure Key Vault</h2> </summary>
 <br>
 
-> We're now going to **Create our Microsoft Sentinel Analytics Query Rules**.
+> This Incident gets triggered when Sentinel detects Unusual or Unauthorized Access to Critical Credentials in Azure Key Vault.
 > 
-> These are going to be used to **Create Alerts** ➜ and then ultimately used to **Spin up Incidents** for certain Events taking place in our Environment.
+> For example ➜ when someones unauthorized reads an important Password from our Entreprise Password Manager ➜ Azure Key Vault.
 
 <br>
 
-Back in the **Azure Portal** ➜ go to **Microsoft Sentinel** ➜ and click on the **Analytics** blade
+## Incident Description
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/577a0b79-d93b-466e-a365-9d1f6107a07e)
+➡️ This Incident involves the unexpected reading of a critical **Secret** from the organization's **Key Vault**.
 
 <br>
 
-We're then going to Import all of our [Sentinel Analytics Rules](https://github.com/joshmadakor1/Cyber-Course-v2/blob/main/Sentinel-Analytics-Rules/Sentinel-Analytics-Rules(KQL%20Alert%20Queries).json).
+<br>
 
-Download the **Raw JSON File** and Save it.
+## Initial Response Actions
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/f075d305-ac55-47d5-85d0-a0e80f4b7022)
+✔ Verify the Authenticity of the Alert or Report.
+
+✔ Identify the Secret that was read and the User or Application that read it.
+
+✔ Determine How and When the Secret was read.
+
+✔ Assess the Potential Impact of the Incident.
 
 <br>
 
-Back in **Microsoft Sentinel** ➜ click on **Import** to upload the **JSON File**.
+<br>
+
+## Detection & Analysis
+
+<details close> 
+<summary> <h3>🎯 Step-by-Step</h3> </summary>
+
+<br>
+  
+**1️⃣** Set the **Severity**, the **Status** & the **Owner** of the Incident:
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/8085ebbc-055d-48e6-bce8-e7147d0b8ef3)
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
 
 <br>
 
-✅ We can confirm that all of our **13 Analytics Query Rules** were **Successfully Deployed**!
+<h2></h2>
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/26168fbd-25bd-4b1f-b5cd-23cce068badd)
+**2️⃣** **View Full Details**
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
+
+<h2></h2>
+
+<br>
+
+**3️⃣** Observe the **Activity Log**
+
+<br>
+
+**```Nothing to show here.```**
+
+<br>
+
+<h2></h2>
+
+<br>
+
+**4️⃣** Observe the **Entities** & **Incident Timeline**
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
+
+<h2></h2>
+
+<br>
+
+**5️⃣** **Investigate** the Incident and continue trying to Determine the Scope
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
+
+<h2></h2>
+
+<br>
+
+**6️⃣** **Inspect the Entities** and see if there are any Related Events
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
+
+<h2></h2>
+
+<br>
+
+**7️⃣** **Determine Legitimacy** of the Incident
+
+<br>
+
+Determined **NOT** to be a **Legitimate Incident** ❌
+
+<br>
+
+<h2></h2>
+
+<br>
+
+**8️⃣** If **True Positive** ➜ Continue | If **False Positive** ➜ Close it out
+
+<br>
+
+Determined to be ➜ a **False Positive** ❌
+
+<br>
+
+  </details>
+
+<br>
+
+<br>
+
+## Containment, Eradication & Recovery
+
+<br>
+
+➡️ None.
+
+This was me viewing Key Vault Secrets at work ➜ I'm authorized to do this.
+
+I don't think there is anything wrong with the Rule Logic here ➜ just happened to be a legitimate and authorized Incident-Generating Event.
+
+<br>
+
+<br>
+
+## Post-Incident Activity
+
+<br>
+
+✅ Document Findings and Close out the Incident in Sentinel.
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
 
 <br>
 
