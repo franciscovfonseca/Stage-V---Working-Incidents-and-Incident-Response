@@ -54,19 +54,19 @@ We've completed this step already by:
 
 **1️⃣** Set the **Severity**, the **Status** & the **Owner** of the Incident.
 
-**2️⃣** **View Full Details**
+**2️⃣** **View Full Details**.
 
-**3️⃣** Observe the **Activity Log** (for the History of the Incident)
+**3️⃣** Observe the **Activity Log** (for the History of the Incident).
 
-**4️⃣** Observe the **Entities** & **Incident Timeline**
+**4️⃣** Observe the **Entities** & **Incident Timeline**.
 
-**5️⃣** **Investigate** the Incident and continue trying to Determine the Scope
+**5️⃣** **Investigate the Incident** and continue trying to **Determine the Scope**.
 
-**6️⃣** **Inspect the Entities** and see if there are any Related Events
+**6️⃣** **Inspect the Entities** and see if there are any **Related Events**.
 
-**7️⃣** **Determine Legitimacy** of the Incident
+**7️⃣** **Determine Legitimacy** of the Incident.
 
-**8️⃣** If **True Positive** ➜ Continue | If **False Positive** ➜ Close it out
+**8️⃣** If **True Positive** ➜ Continue | If **False Positive** ➜ Close it out.
 
 <br>
 
@@ -193,7 +193,7 @@ Use this simple [**Incident Response PlayBook**](https://docs.google.com/documen
 
 <br>
 
-**5️⃣** **Investigate** the Incident and continue trying to Determine the Scope
+**5️⃣** **Investigate the Incident** and continue trying to **Determine the Scope**
 
 <br>
 
@@ -209,11 +209,17 @@ Use this simple [**Incident Response PlayBook**](https://docs.google.com/documen
 
 <br>
 
-**6️⃣** **Inspect the Entities** and see if there are any Related Events
+**6️⃣** **Inspect the Entities** and see if there are any **Related Events**
 
 <br>
 
-### The entity is involved with other Brute Force Attempts during the same period.
+The Entity is involved with other **Brute Force Attempts** during the same period.
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
 
 <br>
 
@@ -396,7 +402,7 @@ Check out the **Lessons Learned Section** for more details on this Incident.
 
 <br>
 
-**5️⃣** **Investigate** the Incident and continue trying to Determine the Scope
+**5️⃣** **Investigate the Incident** and continue trying to **Determine the Scope**
 
 <br>
 
@@ -486,71 +492,57 @@ I don't think there is anything wrong with the Rule Logic here ➜ just happened
 <summary> <h2>Incident ❸ - Brute Force SUCCESS - Microsoft Entra ID</h2> </summary>
 <br>
 
-<br>
 
->   <details close> 
->   
-> **<summary> 📝 Explanation</summary>**
+> The Incident gets triggered when Sentinel detects a Successful Login to a Microsoft Entra ID Account following numerous Failed Login Attempts.
 > 
-> In this final stage of the lab ➜ we're going to explore some of the **Custom Analytics Rules / Alerts** that we created in **Sentinel**.
-> 
-> We'll look at the **Queries** that make those Events ➜ and try to go through and manually trigger at least 6 of them.
->   
-> This will allow us to understand how the Analytics Rules & the KQL actually work.
-> 
->   </details>
+> For example ➜ an Attacker Successfully Accessed a Microsoft Entra ID Account by repeatedly Guessing Passwords.
 
 <br>
 
-To test your alerts and incidents rule configuration ➜ simulate some attacks on the VMs and see if they show up in Sentinel (generate alerts and incidents).
-
-⚠️ We have to make sure these work before the first observation period.
+## Incident Description
 
 <br>
 
-Here are some Tests to Run:
+➡️ This Incident involves Observation of potential **Brute Force Success against Microsoft Entra ID**.
 
 <br>
 
-#### ❶ Trigger AAD Brute Force Success:
+<br>
 
-- Simulate brute force success against Azure AD with your attacker account (from attack-vm).
-
-- Either use PowerShell or an incognito window to fail 10-11 consecutive logins, followed by one successful login.
+## Initial Response Actions
 
 <br>
 
-<h2></h2>
+✔ Verify the Authenticity of the Alert or Report.
+
+✔ Immediately Identify and Revoke Sessions/Access for Affected User.
+
+✔ Identify the Origin of the Attacker & Determine if they are Attacking or Involved with anything else.
+
+✔ Assess the Potential Impact of the Incident.
+
+✔ What Type of Account was it?
+
+✔ What Roles did it have?
+
+✔ How long has it been since the Breach went Unattended?
 
 <br>
 
-#### ❷ Trigger MSSQL Brute Force Attempt:
+<br>
 
-- We'll use the ```attack-vm``` for this one.
+## Detection & Analysis
 
-- Use ***PowerShell*** or ***SSMS*** to simulate **Brute Force Attempt against your SQL Server** by failing 10 Consecutive Logins.
+<details close> 
+<summary> <h3>🎯 Step-by-Step</h3> </summary>
+
+<br>
+  
+**1️⃣** Set the **Severity**, the **Status** & the **Owner** of the Incident:
 
 <br>
 
-<h2></h2>
-
-<br>
-
-#### ❸ Trigger Malware Outbreak:
-
-- In ```windows-vm``` generate a **Malware Alert** by using ***PowerShell*** to create 1 or more **EICAR Files**.
-
-- 💡 You can also do this Manually by creating a Text File with an **EICAR String** in it.
-
-<br>
-
-<h2></h2>
-
-<br>
-
-#### ❹ Trigger Possible Privilege Escalation (AKV Critical Credential Retrieval or Update):
-
-- Manually read our **Key Vault Secret** ```Tenant-Global-Admin-Password``` in the Azure portal.
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
 
 <br>
 
@@ -558,9 +550,11 @@ Here are some Tests to Run:
 
 <br>
 
-#### ❺ Trigger Windows Host Firewall Tampering:
+**2️⃣** **View Full Details**
 
-- Manually Enable & Disable the ```windows-vm``` **Firewall**.
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
 
 <br>
 
@@ -568,9 +562,11 @@ Here are some Tests to Run:
 
 <br>
 
-#### ❻ Trigger Excessive Password Resets:
+**3️⃣** Observe the **Activity Log**
 
-- Reset a **User's Password** in the Azure portal 10 times.
+<br>
+
+**```Nothing to show here.```**
 
 <br>
 
@@ -578,25 +574,93 @@ Here are some Tests to Run:
 
 <br>
 
-After each attach, wait 10-20 minutes ➜ then check Sentinel to see if you have any incidents.
+**4️⃣** Observe the **Entities** & **Incident Timeline**
 
 <br>
 
->   <details close> 
->   
-> **<summary> 💡 Note</summary>**
-> 
-> This can also help you with incident investigation later on in the lab.
-> 
->   </details>
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
 
 <br>
 
-### ➡️ Incidents in Sentinel after Simulating Some Attacks:
+<h2></h2>
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/00cef135-106c-4f4e-a5d0-f68e2b345c14)
+**5️⃣** **Investigate the Incident** and continue trying to **Determine the Scope**
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
+
+<h2></h2>
+
+<br>
+
+**6️⃣** **Inspect the Entities** and see if there are any Related Events
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
+
+<h2></h2>
+
+<br>
+
+**7️⃣** **Determine Legitimacy** of the Incident
+
+<br>
+
+Determined **NOT** to be a **Legitimate Incident** ❌
+
+<br>
+
+<h2></h2>
+
+<br>
+
+**8️⃣** If **True Positive** ➜ Continue | If **False Positive** ➜ Close it out
+
+<br>
+
+Determined to be ➜ a **False Positive** ❌
+
+<br>
+
+  </details>
+
+<br>
+
+<br>
+
+## Containment, Eradication & Recovery
+
+<br>
+
+➡️ None.
+
+This was me viewing Key Vault Secrets at work ➜ I'm authorized to do this.
+
+I don't think there is anything wrong with the Rule Logic here ➜ just happened to be a legitimate and authorized Incident-Generating Event.
+
+<br>
+
+<br>
+
+## Post-Incident Activity
+
+<br>
+
+✅ Document Findings and Close out the Incident in Sentinel.
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
 
 <br>
 
