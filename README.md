@@ -647,8 +647,6 @@ Perhaps by restoring multiple browser tabs simultaneously?
 > 
 > This Incident gets triggered when Sentinel detects a series of Consecutive Failed Login Attempts on a Linux Machine, recorded in the Syslog.
 > 
-> For example ➜ when someones unauthorized reads an important Password from our Entreprise Password Manager ➜ Azure Key Vault.
-> 
 >   </details>
 
 <br>
