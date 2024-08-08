@@ -19,7 +19,7 @@ We'll do this in accordance with the [**NIST 800-61**](https://nvlpubs.nist.gov/
 
 
 <details close> 
-<summary> <h2>▶️ 4 Step Incident Response Guidance / Guidelines</h2> </summary>
+<summary> <h2>➡️ 4 Step Incident Response Guidance / Guidelines</h2> </summary>
 <br>
 
 ## Step ➀ ➜ Preparation
@@ -281,11 +281,11 @@ Despite that ➜ I'm including the steps here for reference from the **Incident 
 
 <br>
 
-✔ **Lock down the NSG** assigned to that VM ➜ either **Entirely** or to **Only Allow Necessary Traffic**.
+➡️ **Lock down the NSG** assigned to that VM / Subnet ➜ either **Entirely** or to **Only Allow Necessary Traffic**.
 
-✔ **Reset** the affected **User’s Password**.
+➡️ **Reset** the affected **User’s Password**.
 
-✔ **Enable MFA**
+➡️ **Enable MFA**
 
 <br>
 
@@ -585,11 +585,11 @@ I don't think there is anything wrong with the Rule Logic here ➜ just happened
 
 <br>
 
-✔ **Reset** the affected **User’s Password & Roles** if applicable.
+➡️ **Reset** the affected **User’s Password & Roles** if applicable.
 
-✔ **Enable MFA**.
+➡️ **Enable MFA**.
 
-✔ Consider preventing any logins from outside the US with **Conditional Access***.
+➡️ Consider preventing any logins from outside the US with **Conditional Access***.
 
 <br>
 
@@ -607,7 +607,9 @@ I don't think there is anything wrong with the Rule Logic here ➜ just happened
   
 **<summary> 📝 Documentation</summary>**
 
-This is another **False Positive**.
+<br>
+
+This is another **False Positive** ❌
 
 It could have been Multiple Login Attempts with the Incorrect Password or MFA Code.
 
@@ -643,99 +645,58 @@ Perhaps by restoring multiple browser tabs simultaneously?
 >   
 > **<summary> 💡 </summary>**
 > 
-> This Incident gets triggered when Sentinel detects Unusual or Unauthorized Access to Critical Credentials in Azure Key Vault.
+> This Incident gets triggered when Sentinel detects a series of Consecutive Failed Login Attempts on a Linux Machine, recorded in the Syslog.
 > 
 > For example ➜ when someones unauthorized reads an important Password from our Entreprise Password Manager ➜ Azure Key Vault.
 > 
 >   </details>
 
+<br>
 
-
-
-
-The following table shows the measurements taken from the insecure environment after the initial 24 hour observation period:
+## Incident Description
 
 <br>
 
-### Metrics - Before Securing Environment
+➡️ This Incident involves Observation of potential **Brute Force Attempts against a Linux Virtual Machine**.
 
 <br>
 
-Start Time: 1/18/2024 15:44
+<br>
 
-Stop Time: 1/19/2024 15:44
+## Initial Response Actions
 
 <br>
 
-| Metric                   | Count
-| ------------------------ | -----
-| SecurityEvent (Windows VM)            | 29005
-| Syslog (Linux VM)                   | 16562
-| SecurityAlert (Microsoft Defender for Cloud)            | 4
-| SecurityIncident (Sentinel Incidents)        | 204
-| NSG Inbound Malicious Flows Allowed | 2837
+✔ Verify the Authenticity of the Alert or Report.
+
+✔ Immediately Isolate the Machine & Change the Password of the Affected User.
+
+✔ Identify the Origin of the Attacks & Determine if they are Attacking or Involved with anything else.
+
+✔ Determine How and When the Attack occurred.
+
+✔ Are the NSGs not being Locked Down? If so ➜ Check other NSGs.
+
+✔ Assess the Potential Impact of the Incident.
+
+✔ What Type of Account was it? Permissions?
 
 <br>
 
-<h2></h2>
+<br>
+
+## Detection & Analysis
+
+<details close> 
+<summary> <h3>🎯 Step-by-Step</h3> </summary>
+
+<br>
+  
+**1️⃣** Set the **Severity**, the **Status** & the **Owner** of the Incident:
 
 <br>
 
-### Attack Maps Before Hardening / Security Controls
-
-<br>
-
-Before taking the screenshots ➜ the Workbooks need to be edited to only show the **last 24 hours**.
-
-💡 The query runs over the last 30 days by default.
-
-<br>
-
->   <details close> 
->   
-> **<summary> 📋 Steps to Edit the Maps:</summary>**
-> 
-> <br>
-> 
-> From inside the **Workbook** ➜ click on ✏️ **Edit** 
-> 
-> <br>
-> 
-> ![azure portal](https://github.com/user-attachments/assets/8085ebbc-055d-48e6-bce8-e7147d0b8ef3)
-> 
-> <br>
-> 
-> Then go all the way down and to the right ➜ click the **↑ Edit** button
-> 
-> <br>
-> 
-> ![azure portal](https://github.com/user-attachments/assets/8085ebbc-055d-48e6-bce8-e7147d0b8ef3)
-> 
-> <br>
-> 
-> Change the **Time Range** to ```Last 24 hours```
-> 
-> Then press the **Run Query** button
-> 
-> <br>
-> 
-> ![azure portal](https://github.com/user-attachments/assets/8085ebbc-055d-48e6-bce8-e7147d0b8ef3)
-> 
-> <br>
-> 
-> Finally ➜ click 📒**Done Editing**
-> 
-> <br>
-> 
-> ![azure portal](https://github.com/user-attachments/assets/8085ebbc-055d-48e6-bce8-e7147d0b8ef3)
-> 
-> <br>
-> 
-> ![azure portal](https://github.com/user-attachments/assets/8085ebbc-055d-48e6-bce8-e7147d0b8ef3)
-> 
-> <br>
-> 
->   </details>
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
 
 <br>
 
@@ -743,35 +704,95 @@ Before taking the screenshots ➜ the Workbooks need to be edited to only show t
 
 <br>
 
-### NSG Allowed Malicious Inbound Flows:
+**5️⃣** **Investigate the Incident** and continue trying to **Determine the Scope**
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/8085ebbc-055d-48e6-bce8-e7147d0b8ef3)
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
 
 <br>
 
-### Linux SSH Authentication Failures:
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/8085ebbc-055d-48e6-bce8-e7147d0b8ef3)
+<h2></h2>
 
 <br>
 
-### Windows RDP/SMB Authentication Failures:
+**6️⃣** **Inspect the Entities** and see if there are any **Related Events**.
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/8085ebbc-055d-48e6-bce8-e7147d0b8ef3)
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
 
 <br>
 
-### MS SQL Server Authentication Failures:
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/8085ebbc-055d-48e6-bce8-e7147d0b8ef3)
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
+
+  </details>
+
+<br>
+
+<br>
+
+## Containment, Eradication & Recovery
+
+<br>
+
+➡️ **Lock down the NSG** assigned to that VM / Subnet ➜ either **Entirely** or to **Only Allow Necessary Traffic**.
+
+<br>
+
+<br>
+
+## Post-Incident Activity
+
+<br>
+
+✅ Document Findings and Close out the Incident in Sentinel.
+
+<br>
+
+<details close> 
+  
+**<summary> 📝 Documentation</summary>**
+
+<br>
+
+There are **6 Entities** (218.92.0.118, 151.80.184.123, 123.49.33.102, 43.134.54.244, 43.156.227.146, 165.22.62.136) ➜ Attacking this Linux Virtual Machine ➜ with No Successful Attempts.
+
+There is a total of **30 Events** grouped into **5 Alerts**.
+
+⚠️ Suspected Over-Exposure to the Public Internet.
+
+<br>
+
+  </details>
+
+<br>
+
+![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+
+<br>
 
 <br>
 
