@@ -13,7 +13,7 @@ We'll do this in accordance with the [**NIST 800-61**](https://nvlpubs.nist.gov/
 <br>
 
 <p align="center">
-<img width="900" src="https://github.com/user-attachments/assets/c72ba407-5700-4f04-912a-3cb76e8c46dc" alt="Banner"/>
+<img width="900" src="https://github.com/user-attachments/assets/66745d60-fc59-406b-9955-b371304e4d98" alt="Banner"/>
 <br />
 <br />
 
