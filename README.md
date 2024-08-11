@@ -1,5 +1,3 @@
-<br>
-
 <h1 align="center">Stage III - Working Incidents & Incident Response</h1>
 
 <br>
