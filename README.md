@@ -116,7 +116,7 @@ Use this simple [**Incident Response PlayBook**](https://docs.google.com/documen
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/9c1cce53-082a-4c9e-b6d5-7da25a14a9d7)
 
 <br>
 
@@ -155,7 +155,7 @@ Use this simple [**Incident Response PlayBook**](https://docs.google.com/documen
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/014f7990-1462-435d-814c-b637a0cc8fe1)
 
 <br>
 
@@ -167,7 +167,7 @@ Use this simple [**Incident Response PlayBook**](https://docs.google.com/documen
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/85192897-8e6b-4373-9056-1119fd9bde61)
 
 <br>
 
@@ -191,7 +191,7 @@ Use this simple [**Incident Response PlayBook**](https://docs.google.com/documen
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/f3c2a5d6-044c-469d-b70a-c066fe2a29e3)
 
 <br>
 
@@ -203,11 +203,11 @@ Use this simple [**Incident Response PlayBook**](https://docs.google.com/documen
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/80a9eedd-d292-448f-b591-33c19b0a5936)
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/7a073b8d-b577-43b8-885f-7cb587d152e1)
 
 <br>
 
@@ -223,7 +223,7 @@ The Entity is involved with other **Brute Force Attempts** during the same perio
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/e3e70d17-02be-40d5-9832-6c8dc61f05ff)
 
 <br>
 
@@ -370,7 +370,7 @@ Check out the **Lessons Learned Section** for more details on this Incident.
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/6dc6cf54-b40b-47f0-854b-8fbd32c7712b)
 
 <br>
 
@@ -382,7 +382,7 @@ Check out the **Lessons Learned Section** for more details on this Incident.
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/780dbef7-c579-4fd1-ae9d-7006e0d2ab53)
 
 <br>
 
@@ -406,7 +406,7 @@ Check out the **Lessons Learned Section** for more details on this Incident.
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/a5cba627-578f-4911-8a6f-400a9f48ad42)
 
 <br>
 
@@ -418,11 +418,7 @@ Check out the **Lessons Learned Section** for more details on this Incident.
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
-
-<br>
-
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/7f13ccd1-e0d0-4857-90eb-c530ed56c491)
 
 <br>
 
@@ -434,7 +430,7 @@ Check out the **Lessons Learned Section** for more details on this Incident.
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/4b6f5d37-159f-4bbb-9bee-5b0e973b02b0)
 
 <br>
 
@@ -490,7 +486,7 @@ I don't think there is anything wrong with the Rule Logic here ➜ just happened
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/b0f91414-fa5e-4414-b9da-57c238fccbb4)
 
 <br>
 
@@ -559,7 +555,7 @@ I don't think there is anything wrong with the Rule Logic here ➜ just happened
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/4316f744-c792-4cba-a7c0-e9e44b00aa3e)
 
 <br>
 
@@ -571,7 +567,7 @@ I don't think there is anything wrong with the Rule Logic here ➜ just happened
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/c2aa1fce-32ac-4003-a659-a82ee50f319d)
 
 <br>
 
@@ -627,7 +623,7 @@ Perhaps by restoring multiple browser tabs simultaneously?
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/7453979b-1468-41fe-ab5e-54b7626b59aa)
 
 <br>
 
@@ -694,7 +690,7 @@ Perhaps by restoring multiple browser tabs simultaneously?
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/a78aa8c6-5ab7-4229-8d69-61f8c479dc28)
 
 <br>
 
@@ -706,11 +702,11 @@ Perhaps by restoring multiple browser tabs simultaneously?
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/a79b05a8-8c0a-4fec-b690-b96051203826)
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/aeeb946b-3404-4f60-9a4d-1106374f07bc)
 
 <br>
 
@@ -722,27 +718,27 @@ Perhaps by restoring multiple browser tabs simultaneously?
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/c3cbf772-7e0b-4ad2-967e-9c2b70924f57)
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/478d9be9-7822-4b30-a9c5-cdfafcf5cb70)
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/47a651e6-3887-42b7-bfc8-fba3ef30d281)
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/3aed1986-18eb-4bfd-93d9-f358b77592a9)
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/10fe187d-3898-4edf-b276-bdc4b89fe7e4)
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/fadc1a2e-eb84-4f70-a48b-24dbe452c3f0)
 
 <br>
 
@@ -788,7 +784,7 @@ There is a total of **30 Events** grouped into **5 Alerts**.
 
 <br>
 
-![azure portal](https://github.com/user-attachments/assets/36df51b2-cdcd-42e7-ad55-d26078edda07)
+![azure portal](https://github.com/user-attachments/assets/240f7483-122a-4ce0-883f-bd09c5ef7af4)
 
 <br>
 
