@@ -6,7 +6,7 @@
 
 <br>
 
-In this lab we're gong to **Investigate and Work the Incidents** being generated within **Microsoft Sentinel**.
+In this lab we're going to **Investigate and Work the Incidents** being generated within **Microsoft Sentinel**.
 
 We'll do this in accordance with the [**NIST 800-61**](https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-61r2.pdf) **Incident Management Lifecycle**.
 
